@@ -1,0 +1,42 @@
+const token = 'NzIwOTAxNzQzMjAyMDA5MTQ4.XuMujg.4TpQVIOfxLi3g0yePuGU6C8mZ9Y';
+const {help, welcome, purge, kick, ban, musicbot, status, swear} = require("discord-bot-maker");
+const Discord = require("discord.js");
+const bot = new Discord.Client();
+ 
+status(bot, {
+  type: "WATCHING Server. Type =help for commands!", //STREAMING, PLAYING, WATCHING
+  title: "Made By HNTR_Kai"
+})
+help(bot, {
+    publicmsg : "=kick : kicks people!
+                 =purge : IDK What This Is!
+                 =ban : Bans People!"
+})
+welcome(bot, {
+    privatemsg : "What's Up {user}, Welcome To {server}!"
+});
+purge(bot, {
+  purgecommand: "=purge",
+  errormsg: "Error",
+  nopermmsg: "No Perms",
+});
+ 
+kick(bot, {
+  kickcommand: "=kick",
+  nopermmsg: "No Permsr",
+  mentionerrormsg: "Mention Error",
+  higherroleerrormsg: "Higher Role Error",
+  defaultreason: "That Was Annoying!",
+  kickmsg: "Good Luck Getting Kicked." //@KICKAUTHOR @KICKEDUSER @REASON
+});
+ 
+ban(bot, {
+  bancommand: "=ban",
+  nopermmsg: "No Perms",
+  mentionerrormsg: "Mention Error",
+  higherroleerrormsg: "Higher Role Error",
+  defaultreason: "Dumb Guy",
+  banmsg: "Banned" //@BANAUTHOR @BANNEDUSER @REASON
+});
+
+bot.login(token)
